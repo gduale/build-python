@@ -15,9 +15,16 @@ rm -rf ${B}
 log Dependencies
 #Si jamais vous êtes sous CentOS ;)
 #sudo yum -y install readline-devel ncurses-devel openssl-devel sqlite-devel gdbm-devel glibc-devel wget gcc make
-sudo apt install -y wget build-essential checkinstall
+sudo apt install -y wget build-essential checkinstall python-dev
 sudo apt install -y libdb-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 sudo apt-get -qqy build-dep python3
+
+sudo apt install python-setuptools python-pip python-smbus -y
+sudo apt install libncursesw5-dev libgdbm-dev libc6-dev -y 
+sudo apt install zlib1g-dev libsqlite3-dev tk-dev -y
+sudo apt install libssl-dev openssl -y
+sudo apt install libffi-dev -y
+
 
 log Fetching
 /usr/bin/wget https://www.python.org/ftp/python/$V/Python-$V.tgz
