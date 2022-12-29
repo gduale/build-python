@@ -1,1 +1,1 @@
-# python-compil
+Build Python easily
