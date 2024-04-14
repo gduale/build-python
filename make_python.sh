@@ -1,5 +1,5 @@
 #!/bin/bash
-## Installation de Python3 sur Debian
+## Setup Python3 on Debian
 set -e
 
 mkdir -p ~/python
@@ -10,8 +10,10 @@ VMAJ=$(echo $V|sed 's/..$//')
 B=~/python/python-${V}
 rm -rf ${B}
 
-#Si vous êtes sous CentOS: 
+# If you are on CentOS: 
 #sudo yum -y install readline-devel ncurses-devel openssl-devel sqlite-devel gdbm-devel glibc-devel wget gcc make
+
+# If you are on Debian
 sudo apt install -y wget build-essential python-dev
 sudo apt install -y libdb-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 #sudo apt-get -qqy build-dep python3
@@ -31,9 +33,9 @@ make altinstall
 cd ../
 rm -rf Python-${V}
 rm -f Python-$V.tgz
-echo -e "\n\nPython est disponible ici : $B"
+echo -e "\n\nPython is available here: $B"
 
-#Création du virtualenv
+#Create a virtualenv
 PYVENV=~/venv-python$V
 $B/bin/python${VMAJ} -m venv $PYVENV
-echo "Le virtual env est disponible ici : $PYVENV"
+echo "The virtual env is here: $PYVENV"
